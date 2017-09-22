@@ -68,6 +68,7 @@ import org.usfirst.frc.team1732.robot.subsystems.GearIntake;
 import org.usfirst.frc.team1732.robot.subsystems.PixyCamera;
 import org.usfirst.frc.team1732.robot.subsystems.Wings;
 import org.usfirst.frc.team1732.robot.triggers.Triggers;
+import org.usfirst.frc.team1732.robot.vision.SimCamera;
 import org.usfirst.frc.team1732.robot.vision.VisionMain;
 
 import edu.wpi.cscore.CvSink;
@@ -112,8 +113,8 @@ public class Robot extends IterativeRobot {
     public static SmartDashboardItem<Double> startOnWallAndShootDistance;
 
     /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code. - written by WPIlib people
+     * This function is run when the robot is first started up and should be used
+     * for any initialization code. - written by WPIlib people
      */
     @Override
     public void robotInit() {
@@ -129,7 +130,7 @@ public class Robot extends IterativeRobot {
 	    addSubsystemsToSmartDashboard();
 	    addAutonomousToSmartDashboard();
 	    addTestingToSmartDashbaord();
-	    // addCamera();
+	    addSimCamera();
 	    dashboard.addItem(SmartDashboardItem.newNumberSender("robotPeriodic() frequency ms", this::getFrequency));
 	    twoGearDriveBack = dashboard.addItem(
 		    SmartDashboardItem.newDoubleReciever("2 Gear Drive Back", TwoGearAuto.DEFAULT_DRIVE_BACK_DISTANCE));
@@ -354,6 +355,12 @@ public class Robot extends IterativeRobot {
 	return startTime - start;
     }
 
+    private void addSimCamera() {
+	Thread t = new Thread(new SimCamera());
+	t.setDaemon(true);
+	t.start();
+    }
+
     private void addCamera() {
 	SmartDashboardItem<Boolean> useCamera = dashboard
 		.addItem(SmartDashboardItem.newBooleanReciever("Run Camera", true));
@@ -438,8 +445,8 @@ public class Robot extends IterativeRobot {
 
     /**
      * Sets the robot to its default states Default states <br>
-     * -solenoid default positions (what position they are when in disabled
-     * mode) <br>
+     * -solenoid default positions (what position they are when in disabled mode)
+     * <br>
      * -motors turned off
      */
     private void setRobotToDefaultStates() {
