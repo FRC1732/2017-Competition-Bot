@@ -300,10 +300,10 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     }
 
     /**
-     * Runs the driveTrain at voltages left and right with no limit using tank
-     * drive method<br>
-     * Intended for use with the joystick input (allows for more flexibility
-     * rather than just using driveRaw)
+     * Runs the driveTrain at voltages left and right with no limit using tank drive
+     * method<br>
+     * Intended for use with the joystick input (allows for more flexibility rather
+     * than just using driveRaw)
      * 
      * @param left
      *            left % voltage
@@ -555,8 +555,8 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     }
 
     /**
-     * * Resets the left and right encoders' PID values to the defaults saved in
-     * the code
+     * * Resets the left and right encoders' PID values to the defaults saved in the
+     * code
      * 
      */
     public void resetEncoderPIDValues() {
@@ -570,8 +570,7 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
      * coast or brake)
      * 
      * @param brake
-     *            the brake mode of the drive train, false to coast, true to
-     *            brake
+     *            the brake mode of the drive train, false to coast, true to brake
      */
     public void setBrakeMode(boolean brake) {
 	rightMaster.enableBrakeMode(brake);
@@ -646,8 +645,8 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     /**
      * Gets the left Encoder PID output
      * 
-     * @return the left Encoder PID output (constrained by the min and max set
-     *         in code)
+     * @return the left Encoder PID output (constrained by the min and max set in
+     *         code)
      */
     public double getLeftPIDOutput() {
 	return leftEncoderPID.get();
@@ -656,8 +655,8 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     /**
      * Gets the right Encoder PID output
      * 
-     * @return the right Encoder PID output (constrained by the min and max set
-     *         in code)
+     * @return the right Encoder PID output (constrained by the min and max set in
+     *         code)
      */
     public double getRightPIDOutput() {
 	return rightEncoderPID.get();
@@ -682,8 +681,7 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     }
 
     /**
-     * Total distance the robot has traveled (only incremented on reset of
-     * encoders)
+     * Total distance the robot has traveled (only incremented on reset of encoders)
      */
     private double leftDistanceTraveled = 0;
     private double rightDistanceTraveled = 0;
@@ -774,8 +772,7 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     }
 
     /**
-     * Checks if the left AND right encoders are within the deadband of the
-     * setpoint
+     * Checks if the left AND right encoders are within the deadband of the setpoint
      * 
      * @return if the left AND right encoders are within the deadband of the
      *         setpoint
