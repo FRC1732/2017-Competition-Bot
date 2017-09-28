@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team1732.robot;
 
 import java.util.function.Supplier;
@@ -113,8 +112,8 @@ public class Robot extends IterativeRobot {
     public static SmartDashboardItem<Double> startOnWallAndShootDistance;
 
     /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code. - written by WPIlib people
+     * This function is run when the robot is first started up and should be used
+     * for any initialization code. - written by WPIlib people
      */
     @Override
     public void robotInit() {
@@ -445,8 +444,8 @@ public class Robot extends IterativeRobot {
 
     /**
      * Sets the robot to its default states Default states <br>
-     * -solenoid default positions (what position they are when in disabled
-     * mode) <br>
+     * -solenoid default positions (what position they are when in disabled mode)
+     * <br>
      * -motors turned off
      */
     private void setRobotToDefaultStates() {
