@@ -8,9 +8,9 @@ import org.usfirst.frc.team1732.robot.smartdashboard.MySmartDashboard;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardGroup;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardItem;
 
-import com.ctre.CANTalon;
-import com.ctre.CANTalon.StatusFrameRate;
-import com.ctre.CANTalon.TalonControlMode;
+import com.ctre.TalonSRX;
+import com.ctre.TalonSRX.StatusFrameRate;
+import com.ctre.TalonSRX.TalonControlMode;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
@@ -60,14 +60,14 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     }
 
     // master is the motor that the other left motors follow
-    private final CANTalon leftMaster = new CANTalon(RobotMap.LEFT_MASTER_MOTOR_DEVICE_NUMBER);
-    private final CANTalon left1 = new CANTalon(RobotMap.LEFT_1_MOTOR_DEVICE_NUMBER);
-    private final CANTalon left2 = new CANTalon(RobotMap.LEFT_2_MOTOR_DEVICE_NUMBER);
+    private final TalonSRX leftMaster = new TalonSRX(RobotMap.LEFT_MASTER_MOTOR_DEVICE_NUMBER);
+    private final TalonSRX left1 = new TalonSRX(RobotMap.LEFT_1_MOTOR_DEVICE_NUMBER);
+    private final TalonSRX left2 = new TalonSRX(RobotMap.LEFT_2_MOTOR_DEVICE_NUMBER);
     // right motors
     // master is the motor the other right motors follow
-    private final CANTalon rightMaster = new CANTalon(RobotMap.RIGHT_MASTER_MOTOR_DEVICE_NUMBER);
-    private final CANTalon right1 = new CANTalon(RobotMap.RIGHT_1_MOTOR_DEVICE_NUMBER);
-    private final CANTalon right2 = new CANTalon(RobotMap.RIGHT_2_MOTOR_DEVICE_NUMBER);
+    private final TalonSRX rightMaster = new TalonSRX(RobotMap.RIGHT_MASTER_MOTOR_DEVICE_NUMBER);
+    private final TalonSRX right1 = new TalonSRX(RobotMap.RIGHT_1_MOTOR_DEVICE_NUMBER);
+    private final TalonSRX right2 = new TalonSRX(RobotMap.RIGHT_2_MOTOR_DEVICE_NUMBER);
 
     private void configureTalons() {
 	// reverses whole left side
@@ -117,7 +117,7 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
 	setMotionMagicAcceleration(DEFAULT_ACCELERATION);
     }
 
-    public void resetCANTalonPositions() {
+    public void resetTalonSRXPositions() {
 	leftMaster.setPosition(0);
 	rightMaster.setPosition(0);
     }
@@ -170,7 +170,7 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
 
     private int prints = 0;
 
-    private void graph(String side, CANTalon source) {
+    private void graph(String side, TalonSRX source) {
 	double speed = source.getSpeed();
 	double position = source.getPosition();
 	double throttle = (source.getOutputVoltage() / source.getBusVoltage()) * 1023;
@@ -719,7 +719,7 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
 	// leftDistanceTraveled += getTalonPosition(leftMaster);
 	rightDistanceTraveled += getRightDistance();
 	// rightDistanceTraveled += getTalonPosition(rightMaster);
-	// this.resetCANTalonPositions();
+	// this.resetTalonSRXPositions();
 	leftEncoder.reset();
 	rightEncoder.reset();
     }
@@ -906,15 +906,15 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
 	setEncoderPIDS(encoderP, encoderI, encoderD);
     }
 
-    private double getTalonVelocity(CANTalon talon) {
+    private double getTalonVelocity(TalonSRX talon) {
 	return talon.getSpeed() * INCHES_PER_REV;
     }
 
-    private double getTalonPosition(CANTalon talon) {
+    private double getTalonPosition(TalonSRX talon) {
 	return talon.getPosition() * INCHES_PER_REV;
     }
 
-    public PIDSource makePIDSource(CANTalon talon) {
+    public PIDSource makePIDSource(TalonSRX talon) {
 	PIDSource pidSource = new PIDSource() {
 
 	    private PIDSourceType type = PIDSourceType.kDisplacement;

@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class PixyCamera extends Subsystem {
 
-    // private final CANTalon lightRelay = new Relay(RobotMap.RELAY_CHANNEL);
+    // private final TalonSRX lightRelay = new Relay(RobotMap.RELAY_CHANNEL);
     private final Talon lightController = new Talon(RobotMap.LIGHT_MOTOR_DEVICE_NUMBER);
 
     public static final double MAX_VOLTAGE = 12;

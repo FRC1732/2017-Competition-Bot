@@ -5,8 +5,8 @@ import org.usfirst.frc.team1732.robot.smartdashboard.MySmartDashboard;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardGroup;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardItem;
 
-import com.ctre.CANTalon;
-import com.ctre.CANTalon.TalonControlMode;
+import com.ctre.TalonSRX;
+import com.ctre.TalonSRX.TalonControlMode;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -15,8 +15,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Climber extends Subsystem implements SmartDashboardGroup {
 
-    private final CANTalon motor1 = new CANTalon(RobotMap.CLIMBER_MOTOR_DEVICE_NUMBER_1);
-    private final CANTalon motor2 = new CANTalon(RobotMap.CLIMBER_MOTOR_DEVICE_NUMBER_2);
+    private final TalonSRX motor1 = new TalonSRX(RobotMap.CLIMBER_MOTOR_DEVICE_NUMBER_1);
+    private final TalonSRX motor2 = new TalonSRX(RobotMap.CLIMBER_MOTOR_DEVICE_NUMBER_2);
 
     public static final double UP_SPEED = -1;
     public static final double STOP_SPEED = 0;
