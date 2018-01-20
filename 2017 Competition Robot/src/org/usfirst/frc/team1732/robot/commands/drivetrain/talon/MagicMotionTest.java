@@ -26,7 +26,7 @@ public class MagicMotionTest extends Command {
 	Robot.driveTrain.setMotionMagicAcceleration(acceleration);
 	Robot.driveTrain.setMotionMagicCruiseVelocity(velocity);
 	Robot.driveTrain.setMotionMagicSetpoint(setpoint);
-	Robot.driveTrain.resetCANTalonPositions();
+	Robot.driveTrain.resetTalonSRXPositions();
     }
 
     // Called repeatedly when this Command is scheduled to run

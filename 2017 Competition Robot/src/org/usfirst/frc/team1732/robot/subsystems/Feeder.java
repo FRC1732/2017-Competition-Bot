@@ -5,7 +5,7 @@ import org.usfirst.frc.team1732.robot.smartdashboard.MySmartDashboard;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardGroup;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardItem;
 
-import com.ctre.CANTalon;
+import com.ctre.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Feeder extends Subsystem implements SmartDashboardGroup {
 
-	private final CANTalon		motor		= new CANTalon(RobotMap.FEEDER_MOTOR_DEVICE_NUMBER);
+	private final TalonSRX		motor		= new TalonSRX(RobotMap.FEEDER_MOTOR_DEVICE_NUMBER);
 	public static final double	IN_SPEED	= -1;
 	public static final double	STOP_SPEED	= 0;
 	public static final double	OUT_SPEED	= 1;												// 0.75, 0.5

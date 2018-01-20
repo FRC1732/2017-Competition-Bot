@@ -5,7 +5,7 @@ import org.usfirst.frc.team1732.robot.smartdashboard.MySmartDashboard;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardGroup;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardItem;
 
-import com.ctre.CANTalon;
+import com.ctre.TalonSRX;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class BallIntake extends Subsystem implements SmartDashboardGroup {
 
-	private final CANTalon		motor		= new CANTalon(RobotMap.BALL_INTAKE_MOTOR_DEVICE_NUMBER);
+	private final TalonSRX		motor		= new TalonSRX(RobotMap.BALL_INTAKE_MOTOR_DEVICE_NUMBER);
 	private final Solenoid		solenoid	= new Solenoid(	RobotMap.PCM_CAN_ID,
 															RobotMap.BALL_INTAKE_SOLENOID_DEVICE_NUMBER);
 	public static final double	IN_SPEED	= -1;															//-1															// -1

@@ -5,15 +5,15 @@ import org.usfirst.frc.team1732.robot.smartdashboard.MySmartDashboard;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardGroup;
 import org.usfirst.frc.team1732.robot.smartdashboard.SmartDashboardItem;
 
-import com.ctre.CANTalon;
-import com.ctre.CANTalon.FeedbackDevice;
-import com.ctre.CANTalon.TalonControlMode;
+import com.ctre.TalonSRX;
+import com.ctre.TalonSRX.FeedbackDevice;
+import com.ctre.TalonSRX.TalonControlMode;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Flywheel extends Subsystem implements SmartDashboardGroup {
 
-    public final CANTalon motor = new CANTalon(RobotMap.FLYWHEEL_MOTOR_DEVICE_NUMBER);
+    public final TalonSRX motor = new TalonSRX(RobotMap.FLYWHEEL_MOTOR_DEVICE_NUMBER);
 
     public static final double STOP_SPEED = 0;
     // public static final double FORWARD_SPEED = 1;
@@ -48,7 +48,7 @@ public class Flywheel extends Subsystem implements SmartDashboardGroup {
 	// motor.setF(F);
 	motor.reverseSensor(true);
 	motor.enableBrakeMode(false);
-	motor.SetVelocityMeasurementPeriod(CANTalon.VelocityMeasurementPeriod.Period_1Ms);
+	motor.SetVelocityMeasurementPeriod(TalonSRX.VelocityMeasurementPeriod.Period_1Ms);
 	motor.SetVelocityMeasurementWindow(10);
 	this.disableAutoControl();
     }
