@@ -38,10 +38,13 @@ import edu.wpi.first.wpilibj.command.Command;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     private Joystick buttons = new Joystick(RobotMap.BUTTONS_USB);
     private Joystick left = new Joystick(RobotMap.LEFT_JOYSTICK_USB);
     private Joystick right = new Joystick(RobotMap.RIGHT_JOYSTICK_USB);
+    //YOYOYOYOYOYOYOYOYOYOYO
+
 
     private final Button climb = new JoystickButton(buttons, 1);
     private final Trigger climbNormal = newNormalButton(climb);
@@ -211,6 +214,7 @@ public class OI {
 	wings.whenReleased(new WingsSetIn());
     }
 
+    //YOYOYOYOYOYOYOYOYOYOYO
     public double getLeftSpeed() {
 	// return -controller.getRawAxis(1);// for use with game controller
 	return left.getRawAxis(RobotMap.LEFT_JOYSTICK_Y_AXIS);
@@ -222,6 +226,8 @@ public class OI {
 	return right.getRawAxis(RobotMap.RIGHT_JOYSTICK_Y_AXIS);
 	// return -buttons.getRawAxis(3);
     }
+    //YOYOYOYOYOYOYOYOYOYOYO
+
 
     private Trigger newNormalButton(Trigger b) {
 	return new Trigger() {

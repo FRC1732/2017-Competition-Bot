@@ -41,11 +41,15 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     public static final double TURNING_CIRCUMFERENCE = Math.PI * ROBOT_WIDTH_INCHES;
     public static final double EFFECTIVE_TURNING_CIRCUMFERENCE = TURNING_CIRCUMFERENCE * 1;
 
+    //YOYOYOYOYOYOYOYOYOYOYO
     public static final String NAME = "Drive Train";
 
     public DriveTrain() {
+	
 	super(NAME);
+	//YOYOYOYOYOYOYOYOYOYOYO
 	configureTalons();
+	
 	configureTalonEncoders();
 	// makes sure braking is enabled
 	setBrakeMode(true);
@@ -58,7 +62,8 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
 	leftEncoderPID.enable();
 	rightEncoderPID.enable();
     }
-
+    
+    //YOYOYOYOYOYOYOYOYOYO
     // master is the motor that the other left motors follow
     private final CANTalon leftMaster = new CANTalon(RobotMap.LEFT_MASTER_MOTOR_DEVICE_NUMBER);
     private final CANTalon left1 = new CANTalon(RobotMap.LEFT_1_MOTOR_DEVICE_NUMBER);
@@ -69,6 +74,8 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
     private final CANTalon right1 = new CANTalon(RobotMap.RIGHT_1_MOTOR_DEVICE_NUMBER);
     private final CANTalon right2 = new CANTalon(RobotMap.RIGHT_2_MOTOR_DEVICE_NUMBER);
 
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     private void configureTalons() {
 	// reverses whole left side
 	leftMaster.setInverted(true);
@@ -310,12 +317,16 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
      * @param right
      *            right % voltage
      */
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     public void driveWithJoysticks(double left, double right) {
 	tankDrive(left, right);
 	// we could change this to other things if we wanted, like
 	// "driveMechanum" or "driveArcade" without having to change code in
 	// other places
     }
+    //YOYOYOYOYOYOYOYOYOYOYO
+
 
     /**
      * Intermediate method in case we want to change the behavior of tank drive
@@ -325,9 +336,15 @@ public class DriveTrain extends Subsystem implements SmartDashboardGroup {
      * @param right
      *            right % voltage
      */
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     private void tankDrive(double left, double right) {
 	driveRawWithRamp(left, right);
     }
+    /*YOYOYOYOYOYOYOYOYOYOYO JUST FOLLOW THE PAST OF DRIVERAW WITH RAMP UNTIL YOU GET SOMEWHERE
+     *OR YOU CAN PROBABLY JUST USE THE FIRST WEBSITE FROM HERE. SUCH A TERRIBLE WEBSITE.
+     */
+
 
     /**
      * Runs the driveTrain at voltages left and right with no limit

@@ -9,15 +9,21 @@ package org.usfirst.frc.team1732.robot;
 public class RobotMap {
 
     // Controller
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     public static final int LEFT_JOYSTICK_Y_AXIS = 1;
     public static final int RIGHT_JOYSTICK_Y_AXIS = 1;
 
     public static final int LEFT_JOYSTICK_USB = 2;
     public static final int RIGHT_JOYSTICK_USB = 1;
+    //YOYOYOYOYOYOYOYOYOYOYO
+
     public static final int BUTTONS_USB = 0;
     public static final int DIAL_USB = 3;
 
     // Drive Train
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     public static final int LEFT_MASTER_MOTOR_DEVICE_NUMBER = 5;
     public static final int LEFT_1_MOTOR_DEVICE_NUMBER = 6;
     public static final int LEFT_2_MOTOR_DEVICE_NUMBER = 7;
@@ -25,6 +31,8 @@ public class RobotMap {
     public static final int RIGHT_MASTER_MOTOR_DEVICE_NUMBER = 0;
     public static final int RIGHT_1_MOTOR_DEVICE_NUMBER = 1;
     public static final int RIGHT_2_MOTOR_DEVICE_NUMBER = 2;
+    //YOYOYOYOYOYOYOYOYOYOYO
+
 
     public static final int LEFT_ENCODER_CHANNEL_A = 2;
     public static final int LEFT_ENCODER_CHANNEL_B = 3;

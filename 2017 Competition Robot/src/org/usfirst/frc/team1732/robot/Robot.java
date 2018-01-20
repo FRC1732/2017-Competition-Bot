@@ -92,7 +92,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
     public static OI oi;
+    
+    //YOYOYOYOYOYOYOYOYOYOYO
     public static DriveTrain driveTrain;
+    
     public static BallIntake ballIntake;
     public static Climber climber;
     public static Feeder feeder;
@@ -122,7 +125,10 @@ public class Robot extends IterativeRobot {
 	    System.out.println("Robot turning on");
 	    // initialize smartdashboard
 	    initializeMySmartDashboardItems();
+	    
+	    //YOYOYOYOYOYOYOYOYOYOYO
 	    initializeSubsystems();
+	    
 	    initializeVision();
 	    initializeInput();
 
@@ -150,6 +156,7 @@ public class Robot extends IterativeRobot {
 
     @Override
     public void disabledInit() {
+	//YOYOYOYOYOYOYOYOYOYOYO
 	setRobotToDefaultStates();
     }
 
@@ -179,6 +186,7 @@ public class Robot extends IterativeRobot {
     @Override
     public void teleopPeriodic() {
 	// climber.setUp();
+	//YOYOYOYOYOYOYOYOYO RIGHT HERE IS WHERE EVERYTHING GETS KINDA SPOOKY SCARY. GO TO FIRST AND DONT BE SILLY BOYS.
 	Scheduler.getInstance().run();
     }
 
@@ -202,7 +210,10 @@ public class Robot extends IterativeRobot {
     }
 
     private void initializeSubsystems() {
+	 
+	//YOYOYOYOYOYOYOYOYOYOYO
 	driveTrain = new DriveTrain();
+	
 	flywheel = new Flywheel();
 	ballIntake = new BallIntake();
 	climber = new Climber();
@@ -455,7 +466,10 @@ public class Robot extends IterativeRobot {
 	// moters
 	feeder.setStop(); // stop feeder
 	flywheel.disableAutoControl(); // turn off flywheel
+	
+	//YOYOYOYOYOYOYOYOYOYOYO
 	driveTrain.driveRaw(0, 0);
+	
 	climber.setStop();
 	gearIntake.setStop();
 	ballIntake.setSpeedStop();
